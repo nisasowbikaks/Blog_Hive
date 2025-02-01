@@ -14,7 +14,7 @@ const MyBlogsPage = () => {
     const fetchPosts = async () => {
       try {
         setLoading(true);
-        const response = await axios.get("http://localhost:4000/posts");
+        const response = await axios.get("https://blog-hive-backend.onrender.com/posts");
         setPosts(response.data.reverse());
       } catch (error) {
         console.error("Error fetching posts:", error);

@@ -27,7 +27,7 @@ const UpdatePostPage = () => {
     console.log("Post data to be updated:", post); // Log the post data here
     try {
         const response = await axios.put(
-            `http://localhost:4000/posts/${postData._id}`, // Ensure postData.id is passed to the endpoint
+            `https://blog-hive-backend.onrender.com/posts/${postData._id}`, // Ensure postData.id is passed to the endpoint
             post // Only send updated author and content
         );
         console.log("Response from server:", response);
@@ -43,7 +43,7 @@ const UpdatePostPage = () => {
 };
 const handleDelete = async (postId) => {
   try {
-      const response = await axios.delete(`http://localhost:4000/posts/${postId}`);
+      const response = await axios.delete(`https://blog-hive-backend.onrender.com/posts/${postId}`);
       console.log("Post deleted:", response.data);
       alert("Post deleted successfully!");
       navigate("/my-blog");

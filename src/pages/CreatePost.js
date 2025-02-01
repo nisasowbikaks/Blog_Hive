@@ -16,7 +16,7 @@ const CreatePostPage = () => {
     const newPost = { author, category, content, url };
 
     try {
-      const response = await axios.post("http://localhost:4000/posts", newPost);
+      const response = await axios.post("https://blog-hive-backend.onrender.com/posts", newPost);
       console.log("Post Created:", response.data);
       navigate("/my-blog"); 
     } catch (error) {
