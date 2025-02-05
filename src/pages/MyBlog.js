@@ -42,7 +42,7 @@ const MyBlogsPage = () => {
   // Handle Delete
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:4000/posts/${id}`);
+      await axios.delete(`https://blog-hive-backend.onrender.com/${id}`);
       setPosts(posts.filter((post) => post._id !== id));
       alert("Post deleted successfully!");
     } catch (error) {
@@ -66,7 +66,7 @@ const MyBlogsPage = () => {
   const submitUpdate = async (id) => {
     try {
       const updatedPost = { content: updatedContent };
-      const response = await axios.put(`http://localhost:4000/posts/${id}`, updatedPost);
+      const response = await axios.put(`https://blog-hive-backend.onrender.com/${id}`, updatedPost);
       const updatedPosts = posts.map((post) =>
         post._id === id ? { ...post, content: response.data.post.content } : post
       );

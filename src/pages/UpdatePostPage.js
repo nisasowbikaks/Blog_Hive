@@ -24,11 +24,11 @@ const UpdatePostPage = () => {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Post data to be updated:", post); // Log the post data here
+    console.log("Post data to be updated:", post); 
     try {
         const response = await axios.put(
-            `https://blog-hive-backend.onrender.com/posts/${postData._id}`, // Ensure postData.id is passed to the endpoint
-            post // Only send updated author and content
+            `https://blog-hive-backend.onrender.com/posts/${postData._id}`,
+            post 
         );
         console.log("Response from server:", response);
         alert("Post updated successfully!");
